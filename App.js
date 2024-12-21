@@ -5,7 +5,7 @@ export default function App() {
   const [scoreA, setScoreA] = useState(0);
   const [scoreB, setScoreB] = useState(0);
   const [winners, setWinners] = useState([]);
-  const [winnerMessage, setWinnerMessage] = useState(""); // State untuk menyimpan pesan pemenang
+  const [winnerMessage, setWinnerMessage] = useState(""); 
 
   const teamA = "Tim A";
   const teamB = "Tim B";
@@ -16,7 +16,7 @@ export default function App() {
       setScoreA(newScore);
       if (newScore === 10) {
         const message = `${teamA} Menang!`;
-        setWinnerMessage(message); // Set pesan pemenang
+        setWinnerMessage(message); 
         setWinners((prevWinners) => [...prevWinners, teamA]);
         resetScores();
       }
@@ -25,7 +25,7 @@ export default function App() {
       setScoreB(newScore);
       if (newScore === 10) {
         const message = `${teamB} Menang!`;
-        setWinnerMessage(message); // Set pesan pemenang
+        setWinnerMessage(message); 
         setWinners((prevWinners) => [...prevWinners, teamB]);
         resetScores();
       }
@@ -55,7 +55,6 @@ export default function App() {
     <ScrollView contentContainerStyle={styles.scrollContainer}>
       <Text style={styles.title}>Pengelola Skor Futsal</Text>
 
-      {/* Menampilkan pesan pemenang jika ada */}
       {winnerMessage !== "" && (
         <View style={styles.winnerMessageContainer}>
           <Text style={styles.winnerMessageText}>{winnerMessage}</Text>
@@ -191,7 +190,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#555',
   },
-  // Style untuk pesan kemenangan
   winnerMessageContainer: {
     backgroundColor: '#4caf50',
     padding: 10,
